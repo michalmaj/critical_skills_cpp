@@ -16,10 +16,10 @@ int main()
 	std::cin >> a >> b;
 
 	// Do calculations:
-	std::cout << "a + b = " << a + b << std::endl;
-	std::cout << "a - b = " << a - b << std::endl;
-	std::cout << "a * b = " << a * b << std::endl; // If 0 as second number we will get unhandled exception: integer division by zero.
-	std::cout << "a / b = " << a / b << std::endl;
+	std::cout << a << " +  " << b << " = " << a + b << std::endl;
+	std::cout << a << " -  " << b << " = " << a - b << std::endl;
+	std::cout << a << " *  " << b << " = " << a * b << std::endl; // If 0 as second number we will get unhandled exception: integer division by zero.
+	std::cout << a << " /  " << b << " = " << a / b << std::endl;
 
 	return 0;
 }
