@@ -11,7 +11,7 @@
 
 int main()
 {
-	int a{}, b{};
+	double a{}, b{};
 	std::cout << "Enter two values: ";
 	std::cin >> a >> b;
 
