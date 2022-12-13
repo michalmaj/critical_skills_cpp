@@ -12,8 +12,8 @@ int main()
 	std::string nameStudent2{};
 	int idStudent1{};
 	int idStudent2{};
-	int gradeStudent1{};
-	int gradeStudent2{};
+	double gradeStudent1{};
+	double gradeStudent2{};
 
 	std::cout << "What is student 1 name: ";
 	std::cin >> nameStudent1;
