@@ -16,7 +16,8 @@ int main()
 
 	double average_3_first = sum_3_first / 3.0;
 	double average_2_last = sum_2_last / 2.0;
-	std::cout << "Sum of the first 3 numbers divided by average of the last 2 numbers: " << divided << std::endl;
+	double result = average_3_first / average_2_last;
+	std::cout << "Sum of the first 3 numbers divided by average of the last 2 numbers: " << result << std::endl;
 
 	return 0;
 }
