@@ -2,14 +2,14 @@
 
 int main()
 {
-	int x, y;
+	int start, end;
 	std::cout << "Give a range to print: ";
-	std::cin >> x >> y;
+	std::cin >> start >> end;
 
-	while(x <= y)
+	while(start <= end)
 	{
-		std::cout << x << std::endl;
-		++x;
+		std::cout << start << std::endl;
+		++start;
 	}
 
 
