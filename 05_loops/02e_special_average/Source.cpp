@@ -3,8 +3,8 @@
 int main()
 {
 	int n;
-	int odd_n{ 0 }, odd_sum{ 0 };
-	int even_n{ 0 }, even_sum{ 0 };
+	double odd_n{ 0 }, odd_sum{ 0 };
+	double even_n{ 0 }, even_sum{ 0 };
 
 	std::cout << "Enter how many numbers do you want to read: ";
 	std::cin >> n;
