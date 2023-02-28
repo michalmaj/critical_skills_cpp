@@ -19,8 +19,7 @@ int main()
 		i = temp;
 		++i;
 	}
-
-
+	
 
 	return 0;
 }
