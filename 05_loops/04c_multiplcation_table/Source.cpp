@@ -7,16 +7,16 @@ int main()
 	std::cout << "Enter two value for multiplication table: ";
 	std::cin >> N >> M;
 
-	int first{ 1 };
-	while(first <= N)
+	int cnt_n{ 1 };
+	while(cnt_n <= N)
 	{
-		int second{ 1 };
-		while(second <= M)
+		int cnt_m{ 1 };
+		while(cnt_m <= M)
 		{
-			std::cout << first << " * " << second << " = " << first * second << std::endl;
-			++second;
+			std::cout << cnt_n << " * " << cnt_m << " = " << cnt_n * cnt_m << std::endl;
+			++cnt_m;
 		}
-		++first;
+		++cnt_n;
 	}
 
 	
