@@ -13,10 +13,8 @@ int main()
 		std::string str;
 		std::cin >> str;
 
-		if(str.size() > 2)
-			continue;
-		if(tolower(str[0]) == 'n' and tolower(str[1]) == 'o' or
-			tolower(str[0]) == 'o' and tolower(str[1]) == 'n')
+		if(str == "no" || str == "No" || str == "nO" || str == "NO" ||
+			str == "on" || str == "oN" || str == "On" || str == "ON")
 		{
 			std::cout << str << " ";
 		}
