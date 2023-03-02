@@ -7,17 +7,17 @@ int main()
 	std::cout << "Enter number to reverse: ";
 	std::cin >> N;
 
-	int R{ 0 };
+	int number{ 0 };
+
 	while(N > 0)
 	{
-		R += N % 10;
-		if (N > 10)
-			R *= 10;
-		N /= 10;
+		int last_digit = N % 10; // get last digit
+		N /= 10; // remove last digit
 
+		number = number * 10 + last_digit;
 	}
 
-	std::cout << R << " " << R * 3 << std::endl;
+	std::cout << number << " " << number * 3 << std::endl;
 
 	std::cout << std::endl;
 
