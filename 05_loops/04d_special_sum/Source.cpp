@@ -21,14 +21,13 @@ int main()
 			int num;
 			std::cin >> num;
 			int val{ 1 };
-			while(cnt)
+			while(copy)
 			{
 				val *= num;
-				--cnt;
+				--copy;
 			}
 			sum += val;
-			copy++;
-			cnt = copy;
+			cnt++;
 		}
 		std::cout << sum << std::endl;
 
