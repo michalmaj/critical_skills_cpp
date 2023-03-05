@@ -25,7 +25,10 @@ int main()
 			continue;
 
 		if (n % i == 0)
+		{
 			is_prime = false;
+			break;
+		}
 	}
 
 	std::cout << ((is_prime) ? "YES" : "NO") << std::endl;
