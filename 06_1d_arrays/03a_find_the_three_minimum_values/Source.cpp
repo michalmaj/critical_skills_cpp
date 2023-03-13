@@ -2,7 +2,7 @@
 
 int main()
 {
-	int arr[]{ 7, 9, -2 };
+	int arr[]{ 4, 1, 3, 10, 8 };
 
 	int f = INT_MAX;
 	int s = INT_MAX;
