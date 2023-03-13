@@ -2,36 +2,28 @@
 
 int main()
 {
-	int arr[200+1]{0};
+	// As values are 0-500, we can make array of 501 mark the last value in it
+	// Then we answer the queries directly
+	const int N{ 500 + 1 };
+	int n, q, x;
+	int ans[N]{ -1 };
 
-	int N;
-	std::cout << "Enter how many values do you want to insert: ";
-	std::cin >> N;
-
-	for (int i{ 0 }; i < N; ++i)
-		std::cin >> arr[i];
-
-	int queries;
-	std::cout << "Enter number of queries: ";
-	std::cin >> queries;
-
-	while(queries--)
+	std::cout << "Enter how many numbers do you want in your array: ";
+	std::cin >> n;
+	for(int i{0}; i < n; ++i)
 	{
-		int num;
-		std::cin >> num;
+		std::cin >> x;
+		ans[x] = i; // update the answer dor x to be i (i will be threaten as index of number) 
+	}
 
-		bool is_not_in{ true };
-		for(int i{N-1}; i >= 0; --i)
-		{
-			if(arr[i] == num)
-			{
-				std::cout << i << " ";
-				is_not_in = false;
-				break;
-			}
-		}
-		if (is_not_in)
-			std::cout << -1 << " ";
+	int num;
+	std::cout << "Enter how many times do you want to find a number: ";
+	std::cin >> q;
+
+	while (q--)
+	{
+		std::cin >> num;
+		std::cout << ans[num] << std::endl;
 	}
 
 
