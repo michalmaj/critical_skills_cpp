@@ -11,6 +11,11 @@ int main()
 	{
 		int num;
 		std::cin >> num;
+
+		// 0 will be a special case
+		if (num == 0) 
+			frequency[0]++;
+
 		while(num != 0)
 		{
 			frequency[num % 10]++;
