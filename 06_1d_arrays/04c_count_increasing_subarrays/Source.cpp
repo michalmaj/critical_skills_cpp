@@ -58,5 +58,29 @@ int main()
 	}
 	std::cout << "result: " << result << std::endl;
 
+	std::cout << "=================================================\n\n";
+
+	result = 0;
+	int len{ 1 };
+
+	// One loop
+	// Let say we have increasing sequence of length 4. It means we have 4*5/2 valid sub-arrays
+	// So, find each maximal sub-sequence and add them using n*(n+1)/2
+	// Or just increment with length each time we extend it
+
+	// We will count sequence of length > 1. Later add +n
+	for(int i{1}; i < n; ++i)
+	{
+		// Keep expand len as long as the sub-array is increasing
+		if (arr[i - 1] <= arr[i])
+		{
+			result += len;
+			++len;
+		}
+		else
+			len = 1;
+	}
+	std::cout << "result: " << result + n << std::endl;
+
 	return 0;
 }
