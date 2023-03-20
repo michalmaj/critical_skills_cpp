@@ -10,7 +10,7 @@ int main()
 
 	for(int i{0}; i < str.size(); ++i)
 	{
-		if (str[i] >= 'a' or 'z' <= str[i])
+		if (str[i] >= 'a' and 'z' >= str[i])
 		{
 			frequency[str[i] - 'a']++;
 		}
