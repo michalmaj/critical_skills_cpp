@@ -4,10 +4,10 @@
 int main()
 {
 	std::string str1{ "ABCDEFG" };
-	std::string str2{ "ABCDEFG" };
+	std::string str2{ "ABCF" };
 	int it{ 0 };
 
-	bool is_substring{ false };
+	bool is_substring{ true };
 
 	// Get size of largest string string
 	int len{ static_cast<int>(str1.size()) };
@@ -17,18 +17,17 @@ int main()
 		std::swap(str1, str2);
 	}
 
-	for(int i{0}; i < len; ++i)
+	// For every possible position in larger str, try to match with the small
+	for(int i{0}; i < str1.size(); ++i)
 	{
-		if (str1.at(i) == str2.at(it))
-			it++;
-		else
-			it = 0;
-
-		if(it == str2.size())
+		is_substring = true;
+		for(int j{0}; j < str2.size() && is_substring; ++j)
 		{
-			is_substring = true;
-			break;
+			if (str2.at(j) != str1.at(i + j))
+				is_substring = false;
 		}
+		if(is_substring)
+			break;
 	}
 
 
