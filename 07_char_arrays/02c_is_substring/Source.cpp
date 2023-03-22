@@ -4,7 +4,7 @@
 int main()
 {
 	std::string str1{ "ABCDEFG" };
-	std::string str2{ "ABCF" };
+	std::string str2{ "ABCD" };
 	int it{ 0 };
 
 	bool is_substring{ true };
@@ -18,7 +18,7 @@ int main()
 	}
 
 	// For every possible position in larger str, try to match with the small
-	for(int i{0}; i < str1.size(); ++i)
+	for(int i{0}; i < str1.size() - str2.size() + 1; ++i)
 	{
 		is_substring = true;
 		for(int j{0}; j < str2.size() && is_substring; ++j)
