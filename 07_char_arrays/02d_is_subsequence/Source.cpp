@@ -3,9 +3,8 @@
 
 int main()
 {
-	std::string str1{ "ABCDEFG" };
-	std::string str2{ "ACEG" };
-	int it{ 0 };
+	std::string str1{ "aaabcd" };
+	std::string str2{ "bd" };
 
 	bool is_subsequence{ false };
 
@@ -17,6 +16,8 @@ int main()
 		std::swap(str1, str2);
 	}
 
+	// Keep match letters in order from the big in the small
+	int it{ 0 };
 	for (int i{ 0 }; i < len; ++i)
 	{
 		if (str1.at(i) == str2.at(it))
