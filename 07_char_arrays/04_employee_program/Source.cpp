@@ -5,10 +5,12 @@ int main()
 	int empty[1000]{ 0 };
 	std::string name[1000]{ "" };
 	int age[1000]{ -1 };
-	float salary[1000]{ 0 };
+	float salary[1000]{ 0.0f };
 	char gender[1000]{ '\0' };
 
 	int it{ 0 };
+	int max_it = it;
+	int size{ 0 };
 	while(true)
 	{
 		int choice;
@@ -39,6 +41,51 @@ int main()
 			age[it] = a;
 			salary[it] = s;
 			gender[it] = g;
+			it++;
+
+			if (it > max_it)
+			{
+				max_it = it;
+				size++;
+			}
+		}
+		else if(choice == 2)
+		{
+			for (int i{ 0 }; i < size; ++i)
+			{
+				if(name[i].empty())
+					continue;
+				std::cout << name[i] << " " << age[i] << " " << salary[i] << " " << gender[i] << std::endl;
+			}
+		}
+		else if(choice == 3)
+		{
+			int start, end;
+			std::cout << "Enter start and end age: ";
+			std::cin >> start >> end;
+			for(int i{0}; i < size; ++i)
+			{
+				if(age[i] >= start and age[i] <= end)
+				{
+					name[i] = "";
+					age[i] = -1;
+					salary[i] = 0.0f;
+					gender[i] = '\0';
+					it = 0;
+				}
+			}
+		}
+		else if(choice == 4)
+		{
+			std::string n;
+			float s;
+			std::cout << "Enter the name and salary: ";
+			std::cin >> n >> s;
+			for(int i{0}; i < size; ++i)
+			{
+				if (name[i] == n)
+					salary[i] = s;
+			}
 		}
 		else
 			break;
