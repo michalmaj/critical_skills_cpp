@@ -13,29 +13,36 @@ int main()
 		{14, 25, 2, 10}
 	};
 
-	int d_i[]{ 0, 1, 1 };
-	int d_j[]{ 1, 1, 0 };
-
-	int r{ 0 };
-	int c{ 0 };
 	int sum{ 0 };
-	while(r < rows and c < cols)
+	int i{ 0 }, j{ 0 }; // starting position
+
+	// Directional array
+	// It's direction for: value below, value on the right, and value on diagonal
+	int di[]{ 1, 0, 1 };
+	int dj[]{ 0, 1, 1 };
+
+	while (i < rows and j < cols)
 	{
-		sum += mat[r][c];
-		int max{ INT_MIN };
-		int r_inner, c_inner;
-		for(int d{0}; d < 3; ++d)
+		sum += mat[i][j];
+
+		int next_val, best_i{ -1 }, best_j{ -1 };
+
+		for (int d{ 0 }; d < 3; ++d)
 		{
-			if (max < mat[r + d_i[d]][c + d_j[d]])
+			int ni = i + di[d];
+			int nj = j + dj[d];
+
+			if (ni < rows and nj < cols)
 			{
-				max = mat[r + d_i[d]][c + d_j[d]];
-				r_inner = r + d_i[d];
-				c_inner = c + d_j[d];
+				if (best_i == -1 or next_val < mat[ni][nj])
+					next_val = mat[ni][nj], best_i = ni, best_j = nj;
 			}
 		}
-		r = r_inner;
-		c = c_inner;
+		if (best_i == -1)
+			break;
+		i = best_i, j = best_j;
 	}
+
 
 	std::cout << sum << std::endl;
 
