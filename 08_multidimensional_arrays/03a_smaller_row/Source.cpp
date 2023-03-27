@@ -27,7 +27,10 @@ int main()
 		for(int c{0}; c < cols; ++c)
 		{
 			if (arr[f - 1][c] >= arr[s - 1][c])
+			{
 				is_smaller = false;
+				break;
+			}
 		}
 
 		std::cout << f << " " << s << " => " << (is_smaller ? "YES" : "NO") << std::endl;
