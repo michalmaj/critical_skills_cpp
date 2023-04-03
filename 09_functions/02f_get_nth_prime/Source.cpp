@@ -32,8 +32,6 @@ int main()
 {
 	std::cout << nth_prime(6) << std::endl;
 
-	for (int i{ 2 }; i < 19; ++i)
-		std::cout << std::boolalpha << i << ": " << is_prime(i) << std::endl;
 
 	return 0;
 }
