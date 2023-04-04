@@ -2,6 +2,8 @@
 
 bool is_prime(int num)
 {
+	if (num <= 1)
+		return false;
 	if (num == 2 or num == 3)
 		return true;
 
