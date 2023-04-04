@@ -3,6 +3,9 @@
 
 bool starts_with(const std::string& input, const std::string& pattern, int pos)
 {
+	if (pos + pattern.size() > input.size())
+		return false;
+
 	for(size_t i{0}; i < pattern.size(); ++i)
 	{
 		if (input.at(pos + i) != pattern.at(i))
