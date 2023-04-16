@@ -1,15 +1,15 @@
 #include <iostream>
 
-double average(int* arr, int len)
+double arr_average(int* arr, int len)
 {
-	double sum, avg;
 	if (len == 1)
-		sum = arr[0];
-	else
-		sum = arr[len - 1] + (len - 1) * average(arr, len - 1);
+		return arr[0];
 
-	avg = sum / len;
-	return avg;
+	double sub_result = arr_average(arr, len - 1);
+	// Now this was average of len-1. So sum  / (len-1)
+	sub_result = sub_result * (len - 1);
+
+	return (sub_result + arr[len - 1]) / len;
 
 }
 
@@ -18,7 +18,7 @@ int main()
 	int arr[]{ 1, 8, 2, 10, 3 };
 	int size = std::size(arr);
 
-	std::cout << average(arr, size) << std::endl;
+	std::cout << arr_average(arr, size) << std::endl;
 
 	return 0;
 }
