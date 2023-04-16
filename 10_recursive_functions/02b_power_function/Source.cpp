@@ -2,8 +2,10 @@
 
 int my_pow(int value, int p = 2)
 {
+	// Base case
 	if (p == 0)
 		return 1;
+
 	return (value * my_pow(value, p - 1));
 
 }
