@@ -1,11 +1,13 @@
 #include <iostream>
 
-int sum(int* arr, int len)
+int arr_sum(int* arr, int len)
 {
-	if (len <= 0)
-		return 0;
+	// Base case
+	if (len == 1)
+		return arr[0];
 
-	return (sum(arr, len - 1) + arr[len - 1]);
+	int sub_result = arr_sum(arr, len - 1);
+	return sub_result + arr[len - 1];
 
 }
 
@@ -14,7 +16,7 @@ int main()
 	int arr[]{ 1, 8, 2, 10, 3 };
 	int size = std::size(arr);
 
-	std::cout << sum(arr, size) << std::endl;
+	std::cout << arr_sum(arr, size) << std::endl;
 
 	return 0;
 }
