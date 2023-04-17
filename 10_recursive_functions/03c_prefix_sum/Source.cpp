@@ -5,7 +5,7 @@ int prefix_sum_v1(int arr[], int len, int cnt)
 	if (cnt == 0)
 		return 0;
 
-	return arr[cnt - 1] + prefix_sum_v1(arr, len - 1, cnt - 1);
+	return arr[cnt - 1] + prefix_sum_v1(arr, len, cnt - 1);
 }
 
 int prefix_sum_v2(int arr[], int cnt)
