@@ -1,5 +1,5 @@
 /*
- * Suf of last K numbers (stream)
+ * Sum of last K numbers (stream)
  * last_k_numbers_sum_stream structure will recieve stream of numbers, each time return sum of last k numbers.
  * E.g., if k = 4
  * Stream: 1 2 3 4 5 6
