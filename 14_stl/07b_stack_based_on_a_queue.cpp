@@ -9,6 +9,17 @@
 struct OurStack{
     std::queue<int> q;
 
+    /*
+     * To work properly, we need q always represents a stack at its front. E.g., for pushes {1, 2, 3}, queue should be
+     * {3, 2, 1}.
+     *
+     * Assume a new value is 7, so we need q to be: 7, 3, 2, 1?
+     * But how can we put 4 at its front without using extra data structures?
+     *
+     * Let's add 7 normally: so now we have 3, 2, 1, 7
+     * Now remove from front 3 abd add it to queue => 2, 1, 7, 3. DO the same for 2, 1.
+     */
+
     void push(int val){
         size_t sz{q.size()};
         q.push(val);
@@ -20,7 +31,7 @@ struct OurStack{
 
     void pop(){
         if(!q.empty()){}
-            q.pop();
+        q.pop();
     }
 
     int top(){
