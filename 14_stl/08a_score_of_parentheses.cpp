@@ -34,6 +34,7 @@
 #include <iostream>
 #include <stack>
 
+
 int scoreOfParentheses(const std::string& str){
     // Each integer represent s total sum added to this parent Parentheses
     std::stack<int> st;
