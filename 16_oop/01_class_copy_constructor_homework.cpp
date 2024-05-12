@@ -43,6 +43,10 @@ public:
     return arr_[pos];
   }
 
+  int getLen() const {
+    return len_;
+  }
+
   void set(int pos, int val) {
     if (checkPos(pos)) {
       throw std::out_of_range("Out of bounds");
